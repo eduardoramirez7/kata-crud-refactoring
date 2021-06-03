@@ -23,7 +23,7 @@ const Form = () => {
     };
 
 
-    fetch(HOST_API + "/todo", {
+    fetch(HOST_API + "/api/todo", {
       method: "POST",
       body: JSON.stringify(request),
       headers: {
@@ -48,7 +48,7 @@ const Form = () => {
     };
 
 
-    fetch(HOST_API + "/todo", {
+    fetch(HOST_API + "/api/todo", {
       method: "PUT",
       body: JSON.stringify(request),
       headers: {
@@ -83,7 +83,7 @@ const List = () => {
   const currentList = todo.list;
 
   useEffect(() => {
-    fetch(HOST_API + "/todos")
+    fetch(HOST_API + "/api/todos")
       .then(response => response.json())
       .then((list) => {
         dispatch({ type: "update-list", list })
@@ -92,7 +92,7 @@ const List = () => {
 
 
   const onDelete = (id) => {
-    fetch(HOST_API + "/" + id + "/todo", {
+    fetch(HOST_API + "/" + id + "/api/todo", {
       method: "DELETE"
     }).then((list) => {
       dispatch({ type: "delete-item", id })
@@ -109,7 +109,7 @@ const List = () => {
       id: todo.id,
       completed: event.target.checked
     };
-    fetch(HOST_API + "/todo", {
+    fetch(HOST_API + "/api/todo", {
       method: "PUT",
       body: JSON.stringify(request),
       headers: {

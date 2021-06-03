@@ -1,21 +1,24 @@
 package co.com.sofka.crud;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="tarea")
 public class Todo {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "estado")
     private boolean completed;
+
+    @Column(name = "idlistado")
     private String groupListId;
 
-    public String getGroupListId() {
-        return groupListId;
-    }
+    public String getGroupListId() {return groupListId;}
 
     public void setGroupListId(String groupListId) {
         this.groupListId = groupListId;
