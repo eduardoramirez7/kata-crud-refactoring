@@ -1,4 +1,4 @@
-package co.com.sofka.crud;
+package co.com.sofka.crud.entities;
 
 import javax.persistence.*;
 
@@ -18,7 +18,9 @@ public class Todo {
     @Column(name = "idlistado")
     private String groupListId;
 
-    public String getGroupListId() {return groupListId;}
+    public String getGroupListId() {
+        return groupListId;
+    }
 
     public void setGroupListId(String groupListId) {
         this.groupListId = groupListId;
