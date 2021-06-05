@@ -63,7 +63,7 @@ const Form = () => {
 
   return (
     <div>
-      <div style={{
+      <div className="mb-3" style={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center"}}>
@@ -71,11 +71,13 @@ const Form = () => {
         type="text"
         name="name"
         placeholder="Nueva Lista"
+        margin="4px"
       ></input>
-      <Button variant="secondary" size="sm" onClick={onEdit}>
+      <Button style={{margin: 10}} variant="secondary" size="sm" onClick={onEdit}>
         Nueva Lista
       </Button>
       </div>
+      <hr/>
       <div>
         <form
           style={{
@@ -98,12 +100,12 @@ const Form = () => {
           </div>
           <div className="mb-2">
             {item.id && (
-              <Button variant="secondary" size="sm" onClick={onEdit}>
+              <Button style={{margin: 10}} variant="secondary" size="sm" onClick={onEdit}>
                 Actualizar Tarea
               </Button>
             )}
             {!item.id && (
-              <Button variant="primary" size="sm" onClick={onAdd}>
+              <Button style={{margin: 10}} variant="primary" size="sm" onClick={onAdd}>
                 Crear Tarea
               </Button>
             )}

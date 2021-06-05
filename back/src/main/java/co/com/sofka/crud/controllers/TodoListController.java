@@ -3,8 +3,13 @@ package co.com.sofka.crud.controllers;
 import co.com.sofka.crud.entities.TodoList;
 import co.com.sofka.crud.services.TodoListService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+
+@Validated
 @RestController
 @RequestMapping("/api")
 public class TodoListController {
@@ -35,6 +40,7 @@ public class TodoListController {
         todoListService.delete(idList);
     }
 
+    @NotEmpty(message = "No puede contener elementos vacios")
     @GetMapping(value = "api/{id}/tasklist")
     public TodoList get(@PathVariable("id") Long idList){
         return todoListService.get(idList);

@@ -1,6 +1,7 @@
 package co.com.sofka.crud.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -10,6 +11,7 @@ public class TodoList implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
+
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL,  orphanRemoval = true)
