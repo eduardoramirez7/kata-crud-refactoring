@@ -1,10 +1,11 @@
 package co.com.sofka.crud.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-public class TodoList {
+public class TodoList implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

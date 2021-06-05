@@ -1,4 +1,4 @@
-package co.com.sofka.crud.controllers.modelmapper;
+package co.com.sofka.crud.modelmapper;
 
 import co.com.sofka.crud.dto.TodoListDTO;
 import co.com.sofka.crud.entities.Todo;

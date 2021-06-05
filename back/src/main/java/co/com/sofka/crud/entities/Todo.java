@@ -1,10 +1,11 @@
 package co.com.sofka.crud.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="tarea")
-public class Todo {
+public class Todo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

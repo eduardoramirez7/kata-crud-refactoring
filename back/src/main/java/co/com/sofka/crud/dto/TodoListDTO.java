@@ -3,6 +3,7 @@ package co.com.sofka.crud.dto;
 import co.com.sofka.crud.entities.Todo;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
